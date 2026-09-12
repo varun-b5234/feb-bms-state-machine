@@ -37,7 +37,7 @@ def has_fault_condition(data: SensorData):
     return False
 
 def needs_balancing(data: SensorData):
-    return (max(data.cell_voltages) - min(data.cell_voltages)) > VOLTAGE_IMBALANCE_THRESH
+    return (max(data.cell_voltages) - min(data.cell_voltages)) 
 
 def get_next_state(current_state: BMSState, data: SensorData):
     if current_state == BMSState.IDLE:
@@ -113,14 +113,13 @@ def simulate_charge_and_balance():
 def send_can_message(state: BMSState):
     print(f"[CAN] Broadcasting bms_state = {state.value}")
 
-if __name__ == "__main__":
-    #print(" Normal Drive:")
-    #run_simulation(BMSState.IDLE, simulate_normal_drive())
+#print(" Normal Drive:")
+#run_simulation(BMSState.IDLE, simulate_normal_drive())
 
-    print("Oerheat While Driving:")
-    run_simulation(BMSState.IDLE, simulate_overheat_while_driving())
+#print("Oerheat While Driving:")
+#run_simulation(BMSState.IDLE, simulate_overheat_while_driving())
 
-    #print("Charge + Balance:")
-    #run_simulation(BMSState.IDLE, simulate_charge_and_balance())
+print("Charge + Balance:")
+run_simulation(BMSState.IDLE, simulate_charge_and_balance())
 
 

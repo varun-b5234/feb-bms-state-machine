@@ -69,4 +69,4 @@ class TestBMSTransitions(unittest.TestCase):
         self.assertEqual(result, BMSState.SHUTDOWN)
 
 
-unittest.main()
+#unittest.main()
